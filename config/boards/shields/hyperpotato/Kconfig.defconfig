@@ -1,0 +1,17 @@
+# Copyright (c) 2023 Sviatoslav Bulbakha
+# SPDX-License-Identifier: MIT
+
+if SHIELD_HYPERPOTATO_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "hyperpotato"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_HYPERPOTATO_LEFT || SHIELD_HYPERPOTATO_RIGHT
+config ZMK_SPLIT
+    default y
+endif

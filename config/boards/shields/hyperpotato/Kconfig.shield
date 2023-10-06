@@ -1,0 +1,8 @@
+# Copyright (c) 2023 Sviatoslav Bulbakha
+# SPDX-License-Identifier: MIT
+
+config SHIELD_HYPERPOTATO_LEFT
+    def_bool $(shields_list_contains,hyperpotato_left)
+
+config SHIELD_HYPERPOTATO_RIGHT
+    def_bool $(shields_list_contains,hyperpotato_right)

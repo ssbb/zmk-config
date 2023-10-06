@@ -1,0 +1,158 @@
+/*
+ * Copyright (c) 2021 Sviatoslav Bulbakha
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define DEF 0
+#define EXT 1
+#define SYM 2
+#define NUM 3
+#define FUN 4
+
+#define PREV LG(LS(LBKT))
+#define NEXT LG(LS(RBKT))
+
+#define FIND LG(F)
+
+#define ZOOM_IN  LG(PLUS)
+#define ZOOM_OUT LG(MINUS)
+#define ZOOM_RES LG(N0)
+
+#define BRI_UP LC(C_BRI_UP)
+#define BRI_DN LC(C_BRI_DN)
+
+#define QUICK_TAP_MS 175
+
+#define KEYS_L 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24
+#define KEYS_R 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29
+#define KEYS_T 30 31 32 33
+
+#define HRM_TAPPING_TERM_MS 280
+#define HRM_GLOBAL_QUICK_TAP_MS 170
+
+&lt {
+  flavor = "balanced";
+  tapping-term-ms = <200>;
+  quick-tap-ms = <QUICK_TAP_MS>;
+};
+
+&sk {
+  quick-release;
+};
+
+/ {
+  behaviors {
+    smart_shift: smart_shift {
+      compatible = "zmk,behavior-mod-morph";
+      label = "SMART_SHIFT";
+      #binding-cells = <0>;
+      bindings = <&sk LSFT>, <&caps_word>;
+      mods = <(MOD_LSFT)>;
+    };
+
+    dqt_sqt: dqt_sqt {
+      compatible = "zmk,behavior-mod-morph";
+      label = "DQT_SQT";
+      #binding-cells = <0>;
+      bindings = <&kp DQT>, <&kp SQT>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    hm_l: homerow_mods_left {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS_LEFT";
+      #binding-cells = <2>;
+      bindings = <&kp>,  <&kp>;
+      flavor = "balanced";
+      tapping-term-ms = <HRM_TAPPING_TERM_MS>;
+      quick-tap-ms = <QUICK_TAP_MS>;                    // repeat on tap-into-hold
+      global-quick-tap-ms = <HRM_GLOBAL_QUICK_TAP_MS>;  // requires PR #1387
+      hold-trigger-key-positions = <KEYS_R KEYS_T>;
+      hold-trigger-on-release;
+    };
+
+    hm_r: homerow_mods_right {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS_RIGHT";
+      #binding-cells = <2>;
+      bindings = <&kp>, <&kp>;
+      flavor = "balanced";
+      tapping-term-ms = <HRM_TAPPING_TERM_MS>;
+      quick_tap_ms = <QUICK_TAP_MS>;
+      global-quick-tap-ms = <HRM_GLOBAL_QUICK_TAP_MS>;  // requires PR #1387
+      hold-trigger-key-positions = <KEYS_L KEYS_T>;
+      hold-trigger-on-release;
+    };
+  };
+
+  conditional_layers {
+    compatible = "zmk,conditional-layers";
+
+    fun_tri_layer {
+      if-layers = <1 2>;
+      then-layer = <3>;
+    };
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    def_layer {
+      label = "DEF";
+      bindings = <
+      &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J        &kp L        &kp U        &kp Y        &kp SQT
+      /* &hm_l LALT A &hm_l LGUI R &hm_l LSFT S &hm_l LCTL T &kp G          &kp M        &hm_r LCTL N &hm_r LSFT E &hm_r LGUI I &hm_r LALT O */
+      &kp A        &kp R        &kp S        &kp T        &kp G          &kp M        &kp N        &kp E        &kp I        &kp O
+      &kp Z        &kp X        &kp C        &kp D        &kp V          &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
+                                             &smart_shift &mo EXT        &kp SPACE    &mo SYM
+      >;
+    };
+
+    ext_layer {
+      label = "EXT";
+      bindings = <
+      &gresc       &kp PREV     &none         &kp NEXT     &none         &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
+      &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &none         &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
+      &kp RG(Z)    &kp RG(X)    &kp RG(C)     &kp TAB      &kp RG(V)     &kp LA(BSPC) &kp BSPC     &none        &none        &none
+                                              &trans       &trans        &kp RET      &trans
+      >;
+    };
+
+    sym_layer {
+      label = "SYM";
+      bindings = <
+      &kp EXCL     &kp AT       &kp HASH      &kp DLLR     &kp PRCNT     &kp EQUAL    &kp GRAVE    &kp COLON    &kp SEMI     &kp STAR
+      &kp LT       &kp AMPS     &kp LBRC      &kp LPAR     &kp LBKT      &kp MINUS    &kp LCTL     &kp LSFT     &kp LGUI     &kp LALT
+      &kp GT       &kp CARET    &kp RBRC      &kp RPAR     &kp RBKT      &kp PLUS     &kp UNDER    &kp TILDE    &kp PIPE     &kp BSLH
+                                              &trans       &trans        &trans       &trans
+      >;
+    };
+
+    num_layer {
+      label = "NUM";
+      bindings = <
+      &none        &none        &none         &none        &none         &kp EQUAL    &kp N7       &kp N8       &kp N9       &kp STAR
+      &kp LALT     &kp LGUI     &kp LSFT      &kp LCTL     &none         &kp MINUS    &kp N1       &kp N2       &kp N3       &kp N0
+      &none        &none        &none         &none        &none         &kp PLUS     &kp N4       &kp N5       &kp N6       &kp FSLH
+                                              &none        &trans        &kp N0       &trans
+      >;
+    };
+
+    fun_layer {
+      label = "FUN";
+      bindings = <
+      &none        &kp C_PREV   &kp C_PP      &kp C_NEXT   &kp BRI_UP    &kp F10      &kp F7       &kp F8       &kp F9       &none
+      &kp LALT     &kp LGUI     &kp LSFT      &kp LCTL     &kp BRI_DN    &kp F11      &kp F1       &kp F2       &kp F3       &none
+      &none        &kp C_VOL_DN &kp C_MUTE    &kp C_VOL_UP &none         &kp F12      &kp F4       &kp F5       &kp F6       &none
+                                              &none        &trans        &trans       &trans
+      >;
+    };
+  };
+};

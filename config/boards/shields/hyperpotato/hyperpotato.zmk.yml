@@ -1,0 +1,11 @@
+file_format: "1"
+id: hyperpotato
+name: hyperpotato
+type: shield
+url: https://github.com/ssbb/hyperpotato
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - hyperpotato_left
+  - hyperpotato_right

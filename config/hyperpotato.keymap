@@ -1,0 +1,6 @@
+#include "3x5_2.keymap"
+
+
+&nice_view_spi {
+  cs-gpios = <&pro_micro 7 GPIO_ACTIVE_HIGH>;
+};

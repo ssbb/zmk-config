@@ -52,6 +52,16 @@
     };
   };
 
+  combos {
+    compatible = "zmk,combos";
+
+    combo_fun {
+      timeout-ms = <300>;
+      key-positions = <30 33>;
+      bindings = <&mo FUN>;
+    };
+  };
+
   keymap {
     compatible = "zmk,keymap";
 

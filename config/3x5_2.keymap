@@ -28,21 +28,6 @@
 #define BRI_UP LC(C_BRI_UP)
 #define BRI_DN LC(C_BRI_DN)
 
-#define QUICK_TAP_MS 175
-
-#define KEYS_L 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24
-#define KEYS_R 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29
-#define KEYS_T 30 31 32 33
-
-#define HRM_TAPPING_TERM_MS 280
-#define HRM_GLOBAL_QUICK_TAP_MS 170
-
-&lt {
-  flavor = "balanced";
-  tapping-term-ms = <200>;
-  quick-tap-ms = <QUICK_TAP_MS>;
-};
-
 &sk {
   quick-release;
 };
@@ -55,40 +40,6 @@
       #binding-cells = <0>;
       bindings = <&sk LSFT>, <&caps_word>;
       mods = <(MOD_LSFT)>;
-    };
-
-    dqt_sqt: dqt_sqt {
-      compatible = "zmk,behavior-mod-morph";
-      label = "DQT_SQT";
-      #binding-cells = <0>;
-      bindings = <&kp DQT>, <&kp SQT>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-
-    hm_l: homerow_mods_left {
-      compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS_LEFT";
-      #binding-cells = <2>;
-      bindings = <&kp>,  <&kp>;
-      flavor = "balanced";
-      tapping-term-ms = <HRM_TAPPING_TERM_MS>;
-      quick-tap-ms = <QUICK_TAP_MS>;                    // repeat on tap-into-hold
-      global-quick-tap-ms = <HRM_GLOBAL_QUICK_TAP_MS>;  // requires PR #1387
-      hold-trigger-key-positions = <KEYS_R KEYS_T>;
-      hold-trigger-on-release;
-    };
-
-    hm_r: homerow_mods_right {
-      compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS_RIGHT";
-      #binding-cells = <2>;
-      bindings = <&kp>, <&kp>;
-      flavor = "balanced";
-      tapping-term-ms = <HRM_TAPPING_TERM_MS>;
-      quick_tap_ms = <QUICK_TAP_MS>;
-      global-quick-tap-ms = <HRM_GLOBAL_QUICK_TAP_MS>;  // requires PR #1387
-      hold-trigger-key-positions = <KEYS_L KEYS_T>;
-      hold-trigger-on-release;
     };
   };
 
@@ -108,7 +59,6 @@
       label = "DEF";
       bindings = <
       &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J        &kp L        &kp U        &kp Y        &kp SQT
-      /* &hm_l LALT A &hm_l LGUI R &hm_l LSFT S &hm_l LCTL T &kp G          &kp M        &hm_r LCTL N &hm_r LSFT E &hm_r LGUI I &hm_r LALT O */
       &kp A        &kp R        &kp S        &kp T        &kp G          &kp M        &kp N        &kp E        &kp I        &kp O
       &kp Z        &kp X        &kp C        &kp D        &kp V          &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
                                              &smart_shift &mo EXT        &kp SPACE    &mo SYM

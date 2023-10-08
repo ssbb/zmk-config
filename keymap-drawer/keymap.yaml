@@ -1,0 +1,135 @@
+layers:
+  BASE:
+  - [Q, W, F, P, B, J, L, U, Y, '''']
+  - [A, R, S, T, G, M, N, E, I, O]
+  - [Z, X, C, D, V, K, H, ',', ., /]
+  - - {t: '$$mdi:apple-keyboard-shift$$', h: sticky, s: Caps Word}
+    - EXTD
+    - $$mdi:keyboard-space$$
+    - SYMB
+  EXTD:
+  - [Esc, Prev Tab, Find, Next Tab, Repeat, Page Up, Home, '$$mdi:arrow-up$$', End, '$$mdi:apple-keyboard-caps$$']
+  - - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-control$$', h: sticky}
+    - C-g
+    - Page Down
+    - $$mdi:arrow-left$$
+    - $$mdi:arrow-down$$
+    - $$mdi:arrow-right$$
+    - $$mdi:backspace-reverse-outline$$
+  - [Undo, Cut, Copy, TAB, Paste, Bspc Word, '$$mdi:backspace-outline$$', '', '', '']
+  - - {t: ▽, type: trans}
+    - {type: held}
+    - $$mdi:keyboard-return$$
+    - {t: ▽, type: trans}
+  SYMB:
+  - ['!', '@', '#', $, '%', '=', '`', ':', ;, '*']
+  - - <
+    - '&'
+    - '{'
+    - (
+    - '['
+    - '-'
+    - {t: '$$mdi:apple-keyboard-control$$', h: Control}
+    - {t: '$$mdi:apple-keyboard-shift$$', h: Shift}
+    - {t: '$$mdi:apple-keyboard-command$$', h: Gui}
+    - {t: '$$mdi:apple-keyboard-option$$', h: Alt}
+  - ['>', ^, '}', ), ']', +, _, '~', '|', \]
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+  NUMB:
+  - ['', '', '', '', '', '=', '7', '8', '9', '*']
+  - - {t: '$$mdi:apple-keyboard-option$$', h: Alt}
+    - {t: '$$mdi:apple-keyboard-command$$', h: Gui}
+    - {t: '$$mdi:apple-keyboard-shift$$', h: Shift}
+    - {t: '$$mdi:apple-keyboard-control$$', h: Control}
+    - ''
+    - '-'
+    - '1'
+    - '2'
+    - '3'
+    - '0'
+  - ['', '', '', '', '', +, '4', '5', '6', /]
+  - - {t: ▽, type: trans}
+    - {type: held}
+    - {t: ▽, type: trans}
+    - {type: held}
+  FUNC:
+  - - ''
+    - {t: '$$tabler:player-track-prev$$', h: Prev}
+    - {t: '$$tabler:player-play$$', h: Play/Pause}
+    - {t: '$$tabler:player-track-next$$', h: Next}
+    - {t: '$$tabler:brightness-up$$', h: Bri+}
+    - F10
+    - F7
+    - F8
+    - F9
+    - ''
+  - - {t: '$$mdi:apple-keyboard-option$$', h: Alt}
+    - {t: '$$mdi:apple-keyboard-command$$', h: Gui}
+    - {t: '$$mdi:apple-keyboard-shift$$', h: Shift}
+    - {t: '$$mdi:apple-keyboard-control$$', h: Control}
+    - {t: '$$tabler:brightness-down$$', h: Bri-}
+    - F11
+    - F1
+    - F2
+    - F3
+    - ''
+  - - ''
+    - {t: '$$tabler:volume-2$$', h: Vol-}
+    - {t: '$$tabler:volume-off$$', h: Mute}
+    - {t: '$$tabler:volume$$', h: Vol+}
+    - ''
+    - F12
+    - F4
+    - F5
+    - F6
+    - ''
+  - - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+  CONF:
+  - - Boot
+    - {t: '$$mdi:bluetooth$$', h: Prev}
+    - {t: '$$mdi:bluetooth-off$$', h: Clear}
+    - {t: '$$mdi:bluetooth$$', h: Next}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+  - - ''
+    - {t: '$$tabler:bluetooth$$', h: '1'}
+    - {t: '$$tabler:bluetooth$$', h: '2'}
+    - {t: '$$tabler:bluetooth$$', h: '3'}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+  - - ''
+    - {t: '$$tabler:bluetooth$$', h: '4'}
+    - {t: '$$tabler:bluetooth$$', h: '5'}
+    - {t: '$$tabler:bluetooth$$', h: '6'}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+  - - ''
+    - {t: ▽, type: trans}
+    - {type: held}
+    - {type: held}
+combos:
+- p: [30, 33]
+  k: FUNC
+- p: [32, 33]
+  k: CONF

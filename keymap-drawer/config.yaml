@@ -113,7 +113,9 @@ parse_config:
   raw_binding_map:
     '&caps_word': Caps Word
     '&bootloader': Boot
-    '&key_repeat': Repeat
+    '&key_repeat':
+      t: $$mdi:repeat$$
+      h: Repeat
     '&bt BT_SEL 0':
       t: $$tabler:bluetooth$$
       h: 1
@@ -157,16 +159,22 @@ parse_config:
       t: $$mdi:apple-keyboard-option$$
       h: Alt
     LC(G): C-g
-    LA(BSPC): Bspc Word
-    LG(F): Find
+    LA(BSPC):
+      t: $$mdi:backspace-outline$$
+      h: Word
+    LG(F):
+      t: $$mdi:magnify$$
+      h: Find
     RG(Z): Undo
     RG(X): Cut
     RG(C): Copy
     RG(V): Paste
-    TAB: $$mdi:keyboard-tab$$
+    TAB:
+      t: $$mdi:keyboard-tab$$
+      h: Tab
     ESC: Esc
-    PG_UP: Page Up
-    PG_DN: Page Down
+    PG_UP: PgUp
+    PG_DN: PgDn
     HOME: Home
     END: End
     SPACE: $$mdi:keyboard-space$$
@@ -174,12 +182,22 @@ parse_config:
     RIGHT: $$mdi:arrow-right$$
     UP: $$mdi:arrow-up$$
     DOWN: $$mdi:arrow-down$$
-    BSPC: $$mdi:backspace-outline$$
-    DEL: $$mdi:backspace-reverse-outline$$
-    CAPS: $$mdi:apple-keyboard-caps$$
+    BSPC:
+      t: $$mdi:backspace-outline$$
+      h: Bspc
+    DEL:
+      t: $$mdi:backspace-reverse-outline$$
+      h: Delete
+    CAPS:
+      t: $$mdi:apple-keyboard-caps$$
+      h: Caps
     RET: $$mdi:keyboard-return$$
-    LG(LS(LBKT)): Prev Tab
-    LG(LS(RBKT)): Next Tab
+    LG(LS(LBKT)):
+      t: $$mdi:page-previous-outline$$
+      h: Prev Tab
+    LG(LS(RBKT)):
+      t: $$mdi:page-next-outline$$
+      h: Next Tab
 
     LC(C_BRI_UP):
       t: $$tabler:brightness-up$$

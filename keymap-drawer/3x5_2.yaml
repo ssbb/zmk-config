@@ -8,18 +8,36 @@ layers:
     - $$mdi:keyboard-space$$
     - SYMB
   EXTD:
-  - [Esc, Prev Tab, Find, Next Tab, Repeat, Page Up, Home, '$$mdi:arrow-up$$', End, '$$mdi:apple-keyboard-caps$$']
+  - - Esc
+    - {t: '$$mdi:page-previous-outline$$', h: Prev Tab}
+    - {t: '$$mdi:magnify$$', h: Find}
+    - {t: '$$mdi:page-next-outline$$', h: Next Tab}
+    - {t: '$$mdi:repeat$$', h: Repeat}
+    - PgUp
+    - Home
+    - $$mdi:arrow-up$$
+    - End
+    - {t: '$$mdi:apple-keyboard-caps$$', h: Caps}
   - - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-control$$', h: sticky}
     - C-g
-    - Page Down
+    - PgDn
     - $$mdi:arrow-left$$
     - $$mdi:arrow-down$$
     - $$mdi:arrow-right$$
-    - $$mdi:backspace-reverse-outline$$
-  - [Undo, Cut, Copy, '$$mdi:keyboard-tab$$', Paste, Bspc Word, '$$mdi:backspace-outline$$', '', '', '']
+    - {t: '$$mdi:backspace-reverse-outline$$', h: Delete}
+  - - Undo
+    - Cut
+    - Copy
+    - {t: '$$mdi:keyboard-tab$$', h: Tab}
+    - Paste
+    - {t: '$$mdi:backspace-outline$$', h: Word}
+    - {t: '$$mdi:backspace-outline$$', h: Bspc}
+    - ''
+    - ''
+    - ''
   - - {t: ▽, type: trans}
     - {type: held}
     - $$mdi:keyboard-return$$

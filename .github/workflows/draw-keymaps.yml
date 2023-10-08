@@ -16,6 +16,6 @@ jobs:
       keymap_patterns: "config/3x5_2.keymap"
       config_path: "keymap_drawer.config.yaml"
       output_folder: "keymap-drawer"
-      parse_args: ""
+      parse_args: "-c 10"
       draw_args: "-o '{split: true, rows: 3, columns: 5, thumbs: 2}'"
       amend_commit: true

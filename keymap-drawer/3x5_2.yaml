@@ -1,0 +1,216 @@
+layers:
+  BASE:
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ''''
+  - A
+  - R
+  - S
+  - T
+  - G
+  - M
+  - N
+  - E
+  - I
+  - O
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
+  - ','
+  - .
+  - /
+  - {t: LSFT, h: sticky, s: '&caps_word'}
+  - EXTD
+  - SPACE
+  - SYMB
+  EXTD:
+  - ESC
+  - LG(LS(LBKT))
+  - LG(F)
+  - LG(LS(RBKT))
+  - '&key_repeat'
+  - PG UP
+  - HOME
+  - UP
+  - END
+  - CAPS
+  - {t: LALT, h: sticky}
+  - {t: LGUI, h: sticky}
+  - {t: LSFT, h: sticky}
+  - {t: LCTL, h: sticky}
+  - LC(G)
+  - PG DN
+  - LEFT
+  - DOWN
+  - RIGHT
+  - DEL
+  - RG(Z)
+  - RG(X)
+  - RG(C)
+  - TAB
+  - RG(V)
+  - LA(BSPC)
+  - BSPC
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {type: held}
+  - RET
+  - {t: ▽, type: trans}
+  SYMB:
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - '='
+  - '`'
+  - ':'
+  - ;
+  - '*'
+  - <
+  - '&'
+  - '{'
+  - (
+  - '['
+  - '-'
+  - LCTL
+  - LSFT
+  - LGUI
+  - LALT
+  - '>'
+  - ^
+  - '}'
+  - )
+  - ']'
+  - +
+  - _
+  - '~'
+  - '|'
+  - \
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  NUMB:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '='
+  - '7'
+  - '8'
+  - '9'
+  - '*'
+  - LALT
+  - LGUI
+  - LSFT
+  - LCTL
+  - ''
+  - '-'
+  - '1'
+  - '2'
+  - '3'
+  - '0'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - +
+  - '4'
+  - '5'
+  - '6'
+  - /
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {type: held}
+  FUNC:
+  - ''
+  - PREV
+  - PP
+  - NEXT
+  - LC(C BRI UP)
+  - F10
+  - F7
+  - F8
+  - F9
+  - ''
+  - LALT
+  - LGUI
+  - LSFT
+  - LCTL
+  - LC(C BRI DN)
+  - F11
+  - F1
+  - F2
+  - F3
+  - ''
+  - ''
+  - VOL DN
+  - MUTE
+  - VOL UP
+  - ''
+  - F12
+  - F4
+  - F5
+  - F6
+  - ''
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  CONF:
+  - '&bootloader'
+  - BT PRV
+  - BT CLR
+  - BT NXT
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - {t: BT, h: '5'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
+combos:
+- p: [30, 33]
+  k: FUNC
+- p: [32, 33]
+  k: CONF

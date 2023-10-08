@@ -19,7 +19,7 @@ layers:
     - $$mdi:arrow-down$$
     - $$mdi:arrow-right$$
     - $$mdi:backspace-reverse-outline$$
-  - [Undo, Cut, Copy, TAB, Paste, Bspc Word, '$$mdi:backspace-outline$$', '', '', '']
+  - [Undo, Cut, Copy, '$$mdi:keyboard-tab$$', Paste, Bspc Word, '$$mdi:backspace-outline$$', '', '', '']
   - - {t: ▽, type: trans}
     - {type: held}
     - $$mdi:keyboard-return$$

@@ -85,7 +85,7 @@
     ext_layer {
       label = "EXTD";
       bindings = <
-      &gresc       &kp PREV     &none         &kp NEXT     &key_repeat   &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
+      &kp ESC      &kp PREV     &kp FIND      &kp NEXT     &key_repeat   &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
       &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &kp LC(G)     &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
       &kp RG(Z)    &kp RG(X)    &kp RG(C)     &kp TAB      &kp RG(V)     &kp LA(BSPC) &kp BSPC     &none        &none        &none
                                               &trans       &trans        &kp RET      &trans

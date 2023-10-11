@@ -10,17 +10,20 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define BASE 0
-#define EXTD 1
-#define SYMB 2
-#define NUMB 3
-#define FUNC 4
-#define CONF 5
+#define BASE_MAC 0
+#define BASE_NIX 1
+#define EXTD_MAC 2
+#define EXTD_NIX 3
+#define SYMB 4
+#define NUMB_MAC 5
+#define NUMB_NIX 6
+#define FUNC 7
 
-#define PREV LG(LS(LBKT))
-#define NEXT LG(LS(RBKT))
+#define PREV_MAC LG(LS(LBKT))
+#define NEXT_MAC LG(LS(RBKT))
 
-#define FIND LG(F)
+#define PREV_NIX LC(TAB)
+#define NEXT_NIX LC(LS(TAB))
 
 #define ZOOM_IN  LG(PLUS)
 #define ZOOM_OUT LG(MINUS)
@@ -47,9 +50,16 @@
   conditional_layers {
     compatible = "zmk,conditional-layers";
 
-    fun_tri_layer {
-      if-layers = <1 2>;
-      then-layer = <3>;
+    /* number layer duplicated to avoid using combo for layer activation */
+
+    mac_num_tri_layer {
+      if-layers = <2 4>;
+      then-layer = <5>;
+    };
+
+    nix_num_tri_layer {
+      if-layers = <3 4>;
+      then-layer = <6>;
     };
   };
 
@@ -61,33 +71,47 @@
       key-positions = <30 33>;
       bindings = <&mo FUNC>;
     };
-
-    combo_conf {
-      timeout-ms = <300>;
-      key-positions = <32 33>;
-      bindings = <&mo CONF>;
-    };
   };
 
   keymap {
     compatible = "zmk,keymap";
 
-    def_layer {
-      label = "BASE";
+    def_mac_layer {
+      label = "BASE MAC";
       bindings = <
       &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J        &kp L        &kp U        &kp Y        &kp SQT
       &kp A        &kp R        &kp S        &kp T        &kp G          &kp M        &kp N        &kp E        &kp I        &kp O
       &kp Z        &kp X        &kp C        &kp D        &kp V          &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
-                                             &smart_shift &mo EXTD       &kp SPACE    &mo SYMB
+                                             &smart_shift &mo EXTD_MAC   &kp SPACE    &mo SYMB
       >;
     };
 
-    ext_layer {
-      label = "EXTD";
+    def_nix_layer {
+      label = "BASE NIX";
       bindings = <
-      &kp ESC      &kp PREV     &kp FIND      &kp NEXT     &key_repeat   &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
+      &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J        &kp L        &kp U        &kp Y        &kp SQT
+      &kp A        &kp R        &kp S        &kp T        &kp G          &kp M        &kp N        &kp E        &kp I        &kp O
+      &kp Z        &kp X        &kp C        &kp D        &kp V          &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
+                                             &smart_shift &mo EXTD_NIX   &kp SPACE    &mo SYMB
+      >;
+    };
+
+    ext_mac_layer {
+      label = "EXTD MAC";
+      bindings = <
+      &kp ESC      &kp PREV_MAC &kp LG(F)     &kp NEXT_MAC &key_repeat   &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
       &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &kp LC(G)     &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
       &kp RG(Z)    &kp RG(X)    &kp RG(C)     &kp TAB      &kp RG(V)     &kp LA(BSPC) &kp BSPC     &none        &none        &none
+                                              &trans       &trans        &kp RET      &trans
+      >;
+    };
+
+    ext_nix_layer {
+      label = "EXTD NIX";
+      bindings = <
+      &kp ESC      &kp PREV_NIX &kp LC(F)     &kp NEXT_NIX &key_repeat   &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
+      &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &kp LC(G)     &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
+      &kp RC(Z)    &kp RC(X)    &kp RC(C)     &kp TAB      &kp RC(V)     &kp LC(BSPC) &kp BSPC     &none        &none        &none
                                               &trans       &trans        &kp RET      &trans
       >;
     };
@@ -102,35 +126,34 @@
       >;
     };
 
-    num_layer {
+    num1_layer {
       label = "NUMB";
       bindings = <
-      &none        &none        &none         &none        &none         &kp EQUAL    &kp N7       &kp N8       &kp N9       &kp STAR
-      &kp LALT     &kp LGUI     &kp LSFT      &kp LCTL     &none         &kp MINUS    &kp N1       &kp N2       &kp N3       &kp N0
-      &none        &none        &none         &none        &none         &kp PLUS     &kp N4       &kp N5       &kp N6       &kp FSLH
-                                              &trans       &trans        &trans       &trans
+      &kp N7       &kp N5       &kp N3        &kp N1       &kp N9        &kp N8       &kp N0       &kp N8       &kp N4       &kp N6
+      &kp LALT     &kp LGUI     &kp LSFT      &kp LCTL     &kp F11       &kp F10      &kp LCTL     &kp LSFT     &kp LGUI     &kp LALT
+      &kp F7       &kp F5       &kp F3        &kp F1       &kp F9        &kp F8       &kp F12      &kp F2       &kp F4       &kp F6
+                                              &mo FUNC     &trans        &trans       &trans
+      >;
+    };
+
+    num2_layer {
+      label = "NUMB";
+      bindings = <
+      &kp N7       &kp N5       &kp N3        &kp N1       &kp N9        &kp N8       &kp N0       &kp N2       &kp N4       &kp N6
+      &kp LALT     &kp LGUI     &kp LSFT      &kp LCTL     &kp F11       &kp F10      &kp LCTL     &kp LSFT     &kp LGUI     &kp LALT
+      &kp F7       &kp F5       &kp F3        &kp F1       &kp F9        &kp F8       &kp F12      &kp F2       &kp F4       &kp F6
+                                              &mo FUNC     &trans        &trans       &trans
       >;
     };
 
     fun_layer {
       label = "FUNC";
       bindings = <
-      &none        &kp C_PREV   &kp C_PP      &kp C_NEXT   &kp BRI_UP    &kp F10      &kp F7       &kp F8       &kp F9       &none
-      &kp LALT     &kp LGUI     &kp LSFT      &kp LCTL     &kp BRI_DN    &kp F11      &kp F1       &kp F2       &kp F3       &none
-      &none        &kp C_VOL_DN &kp C_MUTE    &kp C_VOL_UP &none         &kp F12      &kp F4       &kp F5       &kp F6       &none
+      &none        &kp C_PREV   &kp C_PP      &kp C_NEXT   &kp BRI_UP    &none        &bt BT_PRV   &bt BT_CLR   &bt BT_NXT   &none
+      &kp LALT     &kp C_VOL_DN &kp C_MUTE    &kp C_VOL_UP &kp BRI_DN    &none        &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &tog BASE_NIX
+      &none        &none        &none         &none        &none         &none        &none        &none        &none        &none
                                               &none        &trans        &trans       &trans
       >;
-    };
-
-    conf_layer {
-      label = "CONF";
-      bindings = <
-      &bootloader  &bt BT_PRV   &bt BT_CLR    &bt BT_NXT   &none         &none        &none       &none       &none       &none
-      &none        &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2 &none         &none        &none       &none       &none        &none
-      &none        &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_SEL 5 &none         &none        &none       &none       &none       &none
-                                              &none        &trans        &none        &trans
-      >;
-
     };
   };
 };

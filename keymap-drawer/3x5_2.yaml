@@ -1,13 +1,21 @@
 layers:
-  BASE:
+  BASE MAC:
   - [Q, W, F, P, B, J, L, U, Y, '''']
   - [A, R, S, T, G, M, N, E, I, O]
   - [Z, X, C, D, V, K, H, ',', ., /]
   - - {t: '$$mdi:apple-keyboard-shift$$', h: sticky, s: Caps Word}
-    - EXTD
+    - EXTD MAC
     - $$mdi:keyboard-space$$
     - SYMB
-  EXTD:
+  BASE NIX:
+  - [Q, W, F, P, B, J, L, U, Y, '''']
+  - [A, R, S, T, G, M, N, E, I, O]
+  - [Z, X, C, D, V, K, H, ',', ., /]
+  - - {t: '$$mdi:apple-keyboard-shift$$', h: sticky, s: Caps Word}
+    - EXTD NIX
+    - $$mdi:keyboard-space$$
+    - SYMB
+  EXTD MAC:
   - - Esc
     - {t: '$$mdi:page-previous-outline$$', h: Prev Tab}
     - {t: '$$mdi:magnify$$', h: Find}
@@ -34,6 +42,41 @@ layers:
     - {t: '$$mdi:keyboard-tab$$', h: Tab}
     - Paste
     - {t: '$$mdi:backspace-outline$$', h: Word}
+    - {t: '$$mdi:backspace-outline$$', h: Bspc}
+    - ''
+    - ''
+    - ''
+  - - {t: ▽, type: trans}
+    - {type: held}
+    - $$mdi:keyboard-return$$
+    - {t: ▽, type: trans}
+  EXTD NIX:
+  - - Esc
+    - LC(TAB)
+    - LC(F)
+    - LC(LS(TAB))
+    - {t: '$$mdi:repeat$$', h: Repeat}
+    - PgUp
+    - Home
+    - $$mdi:arrow-up$$
+    - End
+    - {t: '$$mdi:apple-keyboard-caps$$', h: Caps}
+  - - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-control$$', h: sticky}
+    - C-g
+    - PgDn
+    - $$mdi:arrow-left$$
+    - $$mdi:arrow-down$$
+    - $$mdi:arrow-right$$
+    - {t: '$$mdi:backspace-reverse-outline$$', h: Delete}
+  - - RC(Z)
+    - RC(X)
+    - RC(C)
+    - {t: '$$mdi:keyboard-tab$$', h: Tab}
+    - RC(V)
+    - LC(BSPC)
     - {t: '$$mdi:backspace-outline$$', h: Bspc}
     - ''
     - ''
@@ -96,7 +139,7 @@ layers:
     - F1
     - F2
     - F3
-    - ''
+    - BASE NIX
   - - ''
     - {t: '$$tabler:volume-2$$', h: Vol-}
     - {t: '$$tabler:volume-off$$', h: Mute}

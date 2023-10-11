@@ -103,19 +103,19 @@ layers:
     - {t: ▽, type: trans}
     - {type: held}
   NUMB:
-  - ['', '', '', '', '', '=', '7', '8', '9', '*']
+  - ['7', '5', '3', '1', '9', '8', '0', '2', '4', '6']
   - - {t: '$$mdi:apple-keyboard-option$$', h: Alt}
     - {t: '$$mdi:apple-keyboard-command$$', h: Gui}
     - {t: '$$mdi:apple-keyboard-shift$$', h: Shift}
     - {t: '$$mdi:apple-keyboard-control$$', h: Control}
-    - ''
-    - '-'
-    - '1'
-    - '2'
-    - '3'
-    - '0'
-  - ['', '', '', '', '', +, '4', '5', '6', /]
-  - - {t: ▽, type: trans}
+    - F11
+    - F10
+    - {t: '$$mdi:apple-keyboard-control$$', h: Control}
+    - {t: '$$mdi:apple-keyboard-shift$$', h: Shift}
+    - {t: '$$mdi:apple-keyboard-command$$', h: Gui}
+    - {t: '$$mdi:apple-keyboard-option$$', h: Alt}
+  - [F7, F5, F3, F1, F9, F8, F12, F2, F4, F6]
+  - - FUNC
     - {type: held}
     - {t: ▽, type: trans}
     - {type: held}
@@ -125,72 +125,26 @@ layers:
     - {t: '$$tabler:player-play$$', h: Play/Pause}
     - {t: '$$tabler:player-track-next$$', h: Next}
     - {t: '$$tabler:brightness-up$$', h: Bri+}
-    - F10
-    - F7
-    - F8
-    - F9
     - ''
-  - - {t: '$$mdi:apple-keyboard-option$$', h: Alt}
-    - {t: '$$mdi:apple-keyboard-command$$', h: Gui}
-    - {t: '$$mdi:apple-keyboard-shift$$', h: Shift}
-    - {t: '$$mdi:apple-keyboard-control$$', h: Control}
-    - {t: '$$tabler:brightness-down$$', h: Bri-}
-    - F11
-    - F1
-    - F2
-    - F3
-    - BASE NIX
-  - - ''
-    - {t: '$$tabler:volume-2$$', h: Vol-}
-    - {t: '$$tabler:volume-off$$', h: Mute}
-    - {t: '$$tabler:volume$$', h: Vol+}
-    - ''
-    - F12
-    - F4
-    - F5
-    - F6
-    - ''
-  - - {type: held}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {type: held}
-  CONF:
-  - - Boot
     - {t: '$$mdi:bluetooth$$', h: Prev}
     - {t: '$$mdi:bluetooth-off$$', h: Clear}
     - {t: '$$mdi:bluetooth$$', h: Next}
     - ''
+  - - {t: '$$mdi:apple-keyboard-option$$', h: Alt}
+    - {t: '$$tabler:volume-2$$', h: Vol-}
+    - {t: '$$tabler:volume-off$$', h: Mute}
+    - {t: '$$tabler:volume$$', h: Vol+}
+    - {t: '$$tabler:brightness-down$$', h: Bri-}
     - ''
-    - ''
-    - ''
-    - ''
-    - ''
-  - - ''
-    - {t: '$$tabler:bluetooth$$', h: '1'}
     - {t: '$$tabler:bluetooth$$', h: '2'}
     - {t: '$$tabler:bluetooth$$', h: '3'}
-    - ''
-    - ''
-    - ''
-    - ''
-    - ''
-    - ''
-  - - ''
     - {t: '$$tabler:bluetooth$$', h: '4'}
-    - {t: '$$tabler:bluetooth$$', h: '5'}
-    - {t: '$$tabler:bluetooth$$', h: '6'}
-    - ''
-    - ''
-    - ''
-    - ''
-    - ''
-    - ''
-  - - ''
+    - BASE NIX
+  - ['', '', '', '', '', '', '', '', '', '']
+  - - {type: held}
     - {t: ▽, type: trans}
-    - {type: held}
-    - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
 combos:
 - p: [30, 33]
   k: FUNC
-- p: [32, 33]
-  k: CONF

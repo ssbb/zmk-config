@@ -136,9 +136,9 @@ layers:
     - {t: '$$tabler:volume$$', h: Vol+}
     - {t: '$$tabler:brightness-down$$', h: Bri-}
     - ''
+    - {t: '$$tabler:bluetooth$$', h: '1'}
     - {t: '$$tabler:bluetooth$$', h: '2'}
-    - {t: '$$tabler:bluetooth$$', h: '3'}
-    - {t: '$$tabler:bluetooth$$', h: '4'}
+    - BT2
     - BASE NIX
   - ['', '', '', '', '', '', '', '', '', '']
   - - {type: held}

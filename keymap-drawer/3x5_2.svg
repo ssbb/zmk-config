@@ -1483,19 +1483,18 @@ path.combo {
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
 <use href="#tabler:bluetooth" xlink:href="#tabler:bluetooth" x="-7" y="-11" height="14" width="14.0" class="key tap glyph tabler:bluetooth"/>
-<text x="0" y="24" class="key hold">2</text>
+<text x="0" y="24" class="key hold">1</text>
 </g>
 <g transform="translate(480, 84)" class="key keypos-17">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
 <use href="#tabler:bluetooth" xlink:href="#tabler:bluetooth" x="-7" y="-11" height="14" width="14.0" class="key tap glyph tabler:bluetooth"/>
-<text x="0" y="24" class="key hold">3</text>
+<text x="0" y="24" class="key hold">2</text>
 </g>
 <g transform="translate(540, 84)" class="key keypos-18">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
-<use href="#tabler:bluetooth" xlink:href="#tabler:bluetooth" x="-7" y="-11" height="14" width="14.0" class="key tap glyph tabler:bluetooth"/>
-<text x="0" y="24" class="key hold">4</text>
+<text x="0" y="-4" class="key tap">BT2</text>
 </g>
 <g transform="translate(600, 84)" class="key keypos-19">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>

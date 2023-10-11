@@ -129,7 +129,7 @@
     num1_layer {
       label = "NUMB";
       bindings = <
-      &kp N7       &kp N5       &kp N3        &kp N1       &kp N9        &kp N8       &kp N0       &kp N8       &kp N4       &kp N6
+      &kp N7       &kp N5       &kp N3        &kp N1       &kp N9        &kp N8       &kp N0       &kp N2       &kp N4       &kp N6
       &kp LALT     &kp LGUI     &kp LSFT      &kp LCTL     &kp F11       &kp F10      &kp LCTL     &kp LSFT     &kp LGUI     &kp LALT
       &kp F7       &kp F5       &kp F3        &kp F1       &kp F9        &kp F8       &kp F12      &kp F2       &kp F4       &kp F6
                                               &mo FUNC     &trans        &trans       &trans
@@ -150,7 +150,7 @@
       label = "FUNC";
       bindings = <
       &none        &kp C_PREV   &kp C_PP      &kp C_NEXT   &kp BRI_UP    &none        &bt BT_PRV   &bt BT_CLR   &bt BT_NXT   &none
-      &kp LALT     &kp C_VOL_DN &kp C_MUTE    &kp C_VOL_UP &kp BRI_DN    &none        &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &tog BASE_NIX
+      &kp LALT     &kp C_VOL_DN &kp C_MUTE    &kp C_VOL_UP &kp BRI_DN    &none        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL2  &tog BASE_NIX
       &none        &none        &none         &none        &none         &none        &none        &none        &none        &none
                                               &none        &trans        &trans       &trans
       >;

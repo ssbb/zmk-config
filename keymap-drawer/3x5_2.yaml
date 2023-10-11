@@ -6,7 +6,7 @@ layers:
   - - {t: '$$mdi:apple-keyboard-shift$$', h: sticky, s: Caps Word}
     - EXTD MAC
     - $$mdi:keyboard-space$$
-    - SYMB
+    - {t: SYMB, s: FUNC}
   BASE NIX:
   - [Q, W, F, P, B, J, L, U, Y, '''']
   - [A, R, S, T, G, M, N, E, I, O]
@@ -98,7 +98,7 @@ layers:
     - {t: '$$mdi:apple-keyboard-command$$', h: Gui}
     - {t: '$$mdi:apple-keyboard-option$$', h: Alt}
   - ['>', ^, '}', ), ']', +, _, '~', '|', \]
-  - - {t: ▽, type: trans}
+  - - FUNC
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
@@ -115,7 +115,7 @@ layers:
     - {t: '$$mdi:apple-keyboard-command$$', h: Gui}
     - {t: '$$mdi:apple-keyboard-option$$', h: Alt}
   - [F7, F5, F3, F1, F9, F8, F12, F2, F4, F6]
-  - - FUNC
+  - - {t: ▽, type: trans}
     - {type: held}
     - {t: ▽, type: trans}
     - {type: held}
@@ -138,13 +138,10 @@ layers:
     - ''
     - {t: '$$tabler:bluetooth$$', h: '1'}
     - {t: '$$tabler:bluetooth$$', h: '2'}
-    - BT2
+    - {t: '$$tabler:bluetooth$$', h: '3'}
     - BASE NIX
   - ['', '', '', '', '', '', '', '', '', '']
-  - - {type: held}
+  - - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-combos:
-- p: [30, 33]
-  k: FUNC
+    - {type: held}

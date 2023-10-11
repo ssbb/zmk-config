@@ -45,6 +45,14 @@
       bindings = <&sk LSFT>, <&caps_word>;
       mods = <(MOD_LSFT)>;
     };
+
+    symb_func: symb_func {
+      compatible = "zmk,behavior-mod-morph";
+      label = "SYMB_FUNC";
+      #binding-cells = <0>;
+      bindings = <&mo SYMB>, <&mo FUNC>;
+      mods = <(MOD_LSFT)>;
+    };
   };
 
   conditional_layers {
@@ -63,15 +71,15 @@
     };
   };
 
-  combos {
-    compatible = "zmk,combos";
+  /* combos { */
+  /*   compatible = "zmk,combos"; */
 
-    combo_func {
-      timeout-ms = <300>;
-      key-positions = <30 33>;
-      bindings = <&mo FUNC>;
-    };
-  };
+  /*   combo_func { */
+  /*     timeout-ms = <300>; */
+  /*     key-positions = <30 33>; */
+  /*     bindings = <&mo FUNC>; */
+  /*   }; */
+  /* }; */
 
   keymap {
     compatible = "zmk,keymap";
@@ -82,7 +90,7 @@
       &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J        &kp L        &kp U        &kp Y        &kp SQT
       &kp A        &kp R        &kp S        &kp T        &kp G          &kp M        &kp N        &kp E        &kp I        &kp O
       &kp Z        &kp X        &kp C        &kp D        &kp V          &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
-                                             &smart_shift &mo EXTD_MAC   &kp SPACE    &mo SYMB
+                                             &smart_shift &mo EXTD_MAC   &kp SPACE    &symb_func
       >;
     };
 
@@ -122,7 +130,7 @@
       &kp EXCL     &kp AT       &kp HASH      &kp DLLR     &kp PRCNT     &kp EQUAL    &kp GRAVE    &kp COLON    &kp SEMI     &kp STAR
       &kp LT       &kp AMPS     &kp LBRC      &kp LPAR     &kp LBKT      &kp MINUS    &kp LCTL     &kp LSFT     &kp LGUI     &kp LALT
       &kp GT       &kp CARET    &kp RBRC      &kp RPAR     &kp RBKT      &kp PLUS     &kp UNDER    &kp TILDE    &kp PIPE     &kp BSLH
-                                              &trans       &trans        &trans       &trans
+                                              &mo FUNC     &trans        &trans       &trans
       >;
     };
 
@@ -132,7 +140,7 @@
       &kp N7       &kp N5       &kp N3        &kp N1       &kp N9        &kp N8       &kp N0       &kp N2       &kp N4       &kp N6
       &kp LALT     &kp LGUI     &kp LSFT      &kp LCTL     &kp F11       &kp F10      &kp LCTL     &kp LSFT     &kp LGUI     &kp LALT
       &kp F7       &kp F5       &kp F3        &kp F1       &kp F9        &kp F8       &kp F12      &kp F2       &kp F4       &kp F6
-                                              &mo FUNC     &trans        &trans       &trans
+                                              &trans       &trans        &trans       &trans
       >;
     };
 
@@ -142,7 +150,7 @@
       &kp N7       &kp N5       &kp N3        &kp N1       &kp N9        &kp N8       &kp N0       &kp N2       &kp N4       &kp N6
       &kp LALT     &kp LGUI     &kp LSFT      &kp LCTL     &kp F11       &kp F10      &kp LCTL     &kp LSFT     &kp LGUI     &kp LALT
       &kp F7       &kp F5       &kp F3        &kp F1       &kp F9        &kp F8       &kp F12      &kp F2       &kp F4       &kp F6
-                                              &mo FUNC     &trans        &trans       &trans
+                                              &trans       &trans        &trans       &trans
       >;
     };
 

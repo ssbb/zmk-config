@@ -1,6 +1,6 @@
 draw_config:
   #separate_combo_diagrams: true
-  draw_key_sides: true
+  # draw_key_sides: true
   append_colon_to_layer_header: false
   sticky_label: Sticky
   svg_style: |

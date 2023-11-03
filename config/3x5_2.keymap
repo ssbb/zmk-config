@@ -130,8 +130,8 @@ combo_##NAME { \
       label = "SYM2";
       bindings = <
       &kp F7       &kp F5       &kp F3        &kp F1       &kp F9        &kp F8       &kp F12      &kp F2       &kp F4       &kp F6
-      &none        &none        &none         &kp EXCL     &kp F11       &kp F10      &kp GRAVE    &kp STAR     &kp DLLR     &kp PLUS
-      &none        &none        &none         &none        &none         &none        &kp TILDE    &none        &none        &none
+      &trans       &none        &trans        &kp EXCL     &kp F11       &kp F10      &kp GRAVE    &kp STAR     &kp DLLR     &kp PLUS
+      &trans       &none        &trans        &none        &none         &none        &kp TILDE    &none        &none        &none
                                               &trans       &trans        &trans       &trans
       >;
     };

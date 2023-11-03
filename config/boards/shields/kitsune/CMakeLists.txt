@@ -11,10 +11,9 @@ zephyr_library_include_directories(${ZEPHYR_LVGL_MODULE_DIR})
 zephyr_library_include_directories(${ZEPHYR_BASE}/lib/gui/lvgl/)
 
 zephyr_library_sources_ifdef(CONFIG_ZMK_DISPLAY font_custom_26.c)
-zephyr_library_sources_ifdef(CONFIG_ZMK_DISPLAY zaphod_status_screen.c)
-zephyr_library_sources_ifdef(CONFIG_ZAPHOD_BONGO_CAT zaphod_bongo_cat_widget.c)
-zephyr_library_sources_ifdef(CONFIG_ZAPHOD_BONGO_CAT zaphod_bongo_cat_images.c)
+zephyr_library_sources_ifdef(CONFIG_ZMK_DISPLAY kitsune_status_screen.c)
+zephyr_library_sources_ifdef(CONFIG_KITSUNE_BONGO_CAT kitsune_bongo_cat_widget.c)
+zephyr_library_sources_ifdef(CONFIG_KITSUNE_BONGO_CAT kitsune_bongo_cat_images.c)
 zephyr_library_sources(${ZEPHYR_BASE}/misc/empty_file.c)
 zephyr_library_include_directories(${CMAKE_SOURCE_DIR}/include)
 zephyr_library_include_directories(${ZEPHYR_BASE}/drivers)
-

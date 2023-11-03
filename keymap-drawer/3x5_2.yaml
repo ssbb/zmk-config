@@ -1,21 +1,13 @@
 layers:
-  BASE MAC:
+  DEF:
   - [Q, W, F, P, B, J, L, U, Y, '''']
   - [A, R, S, T, G, M, N, E, I, O]
   - [Z, X, C, D, V, K, H, ',', ., /]
-  - - {t: '$$mdi:apple-keyboard-shift$$', h: sticky, s: Caps Word}
-    - EXTD MAC
+  - - {t: RSFT, h: sticky, s: Caps Word}
+    - EXT
     - $$mdi:keyboard-space$$
-    - {t: SYMB, s: FUNC}
-  BASE NIX:
-  - [Q, W, F, P, B, J, L, U, Y, '''']
-  - [A, R, S, T, G, M, N, E, I, O]
-  - [Z, X, C, D, V, K, H, ',', ., /]
-  - - {t: '$$mdi:apple-keyboard-shift$$', h: sticky, s: Caps Word}
-    - EXTD NIX
-    - $$mdi:keyboard-space$$
-    - SYMB
-  EXTD MAC:
+    - {t: SYM, s: FUN}
+  EXT:
   - - Esc
     - {t: '$$mdi:page-previous-outline$$', h: Prev Tab}
     - {t: '$$mdi:magnify$$', h: Find}
@@ -50,76 +42,23 @@ layers:
     - {type: held}
     - $$mdi:keyboard-return$$
     - {t: ▽, type: trans}
-  EXTD NIX:
-  - - Esc
-    - LC(TAB)
-    - LC(F)
-    - LC(LS(TAB))
-    - {t: '$$mdi:repeat$$', h: Repeat}
-    - PgUp
-    - Home
-    - $$mdi:arrow-up$$
-    - End
-    - {t: '$$mdi:apple-keyboard-caps$$', h: Caps}
-  - - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-control$$', h: sticky}
-    - C-g
-    - PgDn
-    - $$mdi:arrow-left$$
-    - $$mdi:arrow-down$$
-    - $$mdi:arrow-right$$
-    - {t: '$$mdi:backspace-reverse-outline$$', h: Delete}
-  - - RC(Z)
-    - RC(X)
-    - RC(C)
-    - {t: '$$mdi:keyboard-tab$$', h: Tab}
-    - RC(V)
-    - LC(BSPC)
-    - {t: '$$mdi:backspace-outline$$', h: Bspc}
-    - ''
-    - ''
-    - ''
-  - - {t: ▽, type: trans}
-    - {type: held}
-    - $$mdi:keyboard-return$$
-    - {t: ▽, type: trans}
-  SYMB:
-  - ['!', '@', '#', $, '%', '=', '`', ':', ;, '*']
-  - - <
-    - '&'
-    - '{'
-    - (
-    - '['
-    - '-'
-    - {t: '$$mdi:apple-keyboard-control$$', h: Control}
-    - {t: '$$mdi:apple-keyboard-shift$$', h: Shift}
-    - {t: '$$mdi:apple-keyboard-command$$', h: Gui}
-    - {t: '$$mdi:apple-keyboard-option$$', h: Alt}
-  - ['>', ^, '}', ), ']', +, _, '~', '|', \]
-  - - FUNC
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {type: held}
-  NUMB:
+  SYM:
   - ['7', '5', '3', '1', '9', '8', '0', '2', '4', '6']
-  - - {t: '$$mdi:apple-keyboard-option$$', h: Alt}
-    - {t: '$$mdi:apple-keyboard-command$$', h: Gui}
-    - {t: '$$mdi:apple-keyboard-shift$$', h: Shift}
-    - {t: '$$mdi:apple-keyboard-control$$', h: Control}
-    - F11
-    - F10
-    - {t: '$$mdi:apple-keyboard-control$$', h: Control}
-    - {t: '$$mdi:apple-keyboard-shift$$', h: Shift}
-    - {t: '$$mdi:apple-keyboard-command$$', h: Gui}
-    - {t: '$$mdi:apple-keyboard-option$$', h: Alt}
-  - [F7, F5, F3, F1, F9, F8, F12, F2, F4, F6]
+  - [<, '%', '{', (, '[', '|', _, ':', '=', '-']
+  - ['>', '&', '}', ), ']', ^, '#', '@', ;, \]
+  - - FUN
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+  SYM2:
+  - ['', '', '', '', '', '', '', '', '`', '']
+  - ['', '', '', '!', '', '', '`', '*', $, +]
+  - ['', '', '', '', '', '', '~', '', '', '']
   - - {t: ▽, type: trans}
     - {type: held}
     - {t: ▽, type: trans}
     - {type: held}
-  FUNC:
+  FUN:
   - - ''
     - {t: '$$tabler:player-track-prev$$', h: Prev}
     - {t: '$$tabler:player-play$$', h: Play/Pause}
@@ -127,10 +66,10 @@ layers:
     - {t: '$$tabler:brightness-up$$', h: Bri+}
     - ''
     - {t: '$$mdi:bluetooth$$', h: Prev}
-    - {t: '$$mdi:bluetooth-off$$', h: Clear}
+    - ''
     - {t: '$$mdi:bluetooth$$', h: Next}
     - ''
-  - - {t: '$$mdi:apple-keyboard-option$$', h: Alt}
+  - - ''
     - {t: '$$tabler:volume-2$$', h: Vol-}
     - {t: '$$tabler:volume-off$$', h: Mute}
     - {t: '$$tabler:volume$$', h: Vol+}
@@ -139,7 +78,7 @@ layers:
     - {t: '$$tabler:bluetooth$$', h: '1'}
     - {t: '$$tabler:bluetooth$$', h: '2'}
     - {t: '$$tabler:bluetooth$$', h: '3'}
-    - BASE NIX
+    - ''
   - ['', '', '', '', '', '', '', '', '', '']
   - - ''
     - {t: ▽, type: trans}

@@ -1,0 +1,5 @@
+# Copyright (c) 2023 Sviatoslav Bulbakha
+# SPDX-License-Identifier: MIT
+
+config SHIELD_KITSUNE
+   def_bool $(shields_list_contains,kitsune)

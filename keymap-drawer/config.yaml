@@ -9,10 +9,6 @@ draw_config:
         fill: inherit;
     }
 
-    .combo {
-        display: none !important;
-    }
-
     /* font and background color specifications */
     svg.keymap {
         font-family: Iosevka,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;

@@ -38,25 +38,25 @@ static void set_battery_symbol(lv_obj_t *label,
   }
 #endif /* IS_ENABLED(CONFIG_USB_DEVICE_STACK) */
 
-#if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS_SHOW_PERCENTAGE)
+  /* #if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS_SHOW_PERCENTAGE) */
   char perc[5] = {};
   snprintf(perc, sizeof(perc), "%3u%%", level);
   strcat(text, perc);
-#else
-  if (level > 90) {
-    strcat(text, MY_SYMBOL_BATTERY_FULL);
-  } else if (level > 65) {
-    strcat(text, MY_SYMBOL_BATTERY_THREE_QUARTERS);
-  } else if (level > 50) {
-    strcat(text, MY_SYMBOL_BATTERY_HALF);
-  } else if (level > 25) {
-    strcat(text, MY_SYMBOL_BATTERY_QUARTER);
-  } else if (level > 10) {
-    strcat(text, MY_SYMBOL_BATTERY_LOW);
-  } else {
-    strcat(text, MY_SYMBOL_BATTERY_EMPTY);
-  }
-#endif
+  /* #else */
+  /*   if (level > 90) { */
+  /*     strcat(text, MY_SYMBOL_BATTERY_FULL); */
+  /*   } else if (level > 65) { */
+  /*     strcat(text, MY_SYMBOL_BATTERY_THREE_QUARTERS); */
+  /*   } else if (level > 50) { */
+  /*     strcat(text, MY_SYMBOL_BATTERY_HALF); */
+  /*   } else if (level > 25) { */
+  /*     strcat(text, MY_SYMBOL_BATTERY_QUARTER); */
+  /*   } else if (level > 10) { */
+  /*     strcat(text, MY_SYMBOL_BATTERY_LOW); */
+  /*   } else { */
+  /*     strcat(text, MY_SYMBOL_BATTERY_EMPTY); */
+  /*   } */
+  /* #endif */
   lv_label_set_text(label, text);
   lv_obj_align(label, LV_ALIGN_TOP_RIGHT, -5, 5);
 }

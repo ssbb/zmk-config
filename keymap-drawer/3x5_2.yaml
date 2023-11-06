@@ -84,7 +84,7 @@ layers:
     - {t: '$$tabler:brightness-up$$', h: Bri+}
     - ''
     - {t: '$$mdi:bluetooth$$', h: Prev}
-    - ''
+    - {t: '$$mdi:bluetooth-off$$', h: Clear}
     - {t: '$$mdi:bluetooth$$', h: Next}
     - ''
   - - ''

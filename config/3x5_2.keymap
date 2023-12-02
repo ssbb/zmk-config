@@ -83,7 +83,7 @@
       bindings = <
       &kp ESC      &kp PREV     &kp LG(F)     &kp NEXT     &key_repeat   &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
       &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &kp LC(G)     &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
-      &kp RG(Z)    &kp RG(X)    &kp RG(C)     &kp TAB      &kp RG(V)     &kp LA(BSPC) &kp BSPC     &none        &none        &none
+      &kp RG(Z)    &kp RG(X)    &kp RG(C)     &kp TAB      &kp RG(V)     &kp LA(BSPC) &kp BSPC     &kp TAB      &none        &none
                                               &trans       &trans        &kp RET      &trans
       >;
     };
@@ -111,9 +111,9 @@
     fun_layer {
       label = "FUN";
       bindings = <
-      &none        &kp C_PREV   &kp C_PP      &kp C_NEXT   &kp BRI_UP    &none        &bt BT_PRV   &bt BT_CLR   &bt BT_NXT   &none
-      &none        &kp C_VOL_DN &kp C_MUTE    &kp C_VOL_UP &kp BRI_DN    &none        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none
-      &none        &none        &none         &none        &none         &none        &none        &none        &none        &none
+      &none        &kp C_PREV   &kp C_PP      &kp C_NEXT   &kp BRI_UP    &kp ZOOM_IN  &bt BT_PRV   &bt BT_CLR   &bt BT_NXT   &none
+      &none        &kp C_VOL_DN &kp C_MUTE    &kp C_VOL_UP &kp BRI_DN    &kp ZOOM_OUT &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none
+      &none        &none        &none         &none        &none         &kp ZOOM_RES &none        &none        &none        &none
                                               &none        &trans        &trans       &trans
       >;
     };

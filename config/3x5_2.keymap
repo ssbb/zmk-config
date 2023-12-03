@@ -92,8 +92,8 @@
       label = "SYM";
       bindings = <
       &kp N7       &kp N5       &kp N3        &kp N1       &kp N9        &kp N8       &kp N0       &kp N2       &kp N4       &kp N6
-      &kp LT       &kp PRCNT    &kp LBRC      &kp LPAR     &kp LBKT      &kp SEMI     &kp UNDER    &kp COLON    &kp EQUAL    &kp MINUS
-      &kp GT       &kp AMPS     &kp RBRC      &kp RPAR     &kp RBKT      &kp CARET    &kp AT       &kp HASH     &kp PIPE     &kp BSLH
+      &kp PRCNT    &kp EQUAL    &kp COLON     &kp UNDER    &kp PIPE      &kp LBKT     &kp LPAR     &kp LBRC     &kp LT       &kp SEMI
+      &kp PLUS     &kp MINUS    &kp AMPS      &kp AT       &kp CARET     &kp RBKT     &kp RPAR     &kp RBRC     &kp GT       &kp BSLH
                                               &mo FUN      &trans        &trans       &trans
       >;
     };
@@ -102,8 +102,8 @@
       label = "SYM2";
       bindings = <
       &kp F7       &kp F5       &kp F3        &kp F1       &kp F9        &kp F8       &kp F12      &kp F2       &kp F4       &kp F6
-      &trans       &kp EXCL     &trans        &trans       &kp F11       &kp F10      &kp GRAVE    &kp TILDE    &kp STAR     &kp PLUS
-      &trans       &kp DLLR     &trans        &trans       &none         &none        &none        &none        &none        &none
+      &kp TILDE    &kp STAR     &kp HASH      &kp EXCL     &kp F11       &kp F10      &trans       &trans       &trans       &trans
+      &none        &kp DLLR     &none         &kp GRAVE    &none         &none        &trans       &none        &none        &none
                                               &trans       &trans        &trans       &trans
       >;
     };

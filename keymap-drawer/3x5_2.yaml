@@ -35,7 +35,7 @@ layers:
     - Paste
     - {t: '$$mdi:backspace-outline$$', h: Word}
     - {t: '$$mdi:backspace-outline$$', h: Bspc}
-    - ''
+    - {t: '$$mdi:keyboard-tab$$', h: Tab}
     - ''
     - ''
   - - {t: ▽, type: trans}
@@ -44,31 +44,31 @@ layers:
     - {t: ▽, type: trans}
   SYM:
   - ['7', '5', '3', '1', '9', '8', '0', '2', '4', '6']
-  - [<, '%', '{', (, '[', ;, _, ':', '=', '-']
-  - ['>', '&', '}', ), ']', ^, '@', '#', '|', \]
+  - ['%', '=', ':', _, '|', '[', (, '{', <, ;]
+  - [+, '-', '&', '@', ^, ']', ), '}', '>', \]
   - - FUN
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
   SYM2:
   - [F7, F5, F3, F1, F9, F8, F12, F2, F4, F6]
-  - - {t: ▽, type: trans}
+  - - '~'
+    - '*'
+    - '#'
     - '!'
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
     - F11
     - F10
-    - '`'
-    - '~'
-    - '*'
-    - +
-  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - ''
     - $
+    - ''
+    - '`'
+    - ''
+    - ''
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - ''
-    - ''
-    - ''
     - ''
     - ''
     - ''
@@ -82,7 +82,7 @@ layers:
     - {t: '$$tabler:player-play$$', h: Play/Pause}
     - {t: '$$tabler:player-track-next$$', h: Next}
     - {t: '$$tabler:brightness-up$$', h: Bri+}
-    - ''
+    - LG(PLUS)
     - {t: '$$mdi:bluetooth$$', h: Prev}
     - {t: '$$mdi:bluetooth-off$$', h: Clear}
     - {t: '$$mdi:bluetooth$$', h: Next}
@@ -92,12 +92,12 @@ layers:
     - {t: '$$tabler:volume-off$$', h: Mute}
     - {t: '$$tabler:volume$$', h: Vol+}
     - {t: '$$tabler:brightness-down$$', h: Bri-}
-    - ''
+    - LG(MINUS)
     - {t: '$$tabler:bluetooth$$', h: '1'}
     - {t: '$$tabler:bluetooth$$', h: '2'}
     - {t: '$$tabler:bluetooth$$', h: '3'}
     - ''
-  - ['', '', '', '', '', '', '', '', '', '']
+  - ['', '', '', '', '', LG(0), '', '', '', '']
   - - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}

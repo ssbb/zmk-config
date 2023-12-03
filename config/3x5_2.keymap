@@ -102,8 +102,8 @@
       label = "SYM2";
       bindings = <
       &kp F7       &kp F5       &kp F3        &kp F1       &kp F9        &kp F8       &kp F12      &kp F2       &kp F4       &kp F6
-      &kp TILDE    &kp STAR     &kp HASH      &kp EXCL     &kp F11       &kp F10      &trans       &trans       &trans       &trans
-      &none        &kp DLLR     &none         &kp GRAVE    &none         &none        &trans       &none        &none        &none
+      &kp DLLR     &kp STAR     &kp HASH      &kp EXCL     &kp F11       &kp F10      &trans       &trans       &trans       &none
+      &none        &none        &kp TILDE     &kp GRAVE    &none         &none        &trans       &trans       &trans       &none
                                               &trans       &trans        &trans       &trans
       >;
     };

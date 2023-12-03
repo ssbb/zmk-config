@@ -52,7 +52,7 @@ layers:
     - {type: held}
   SYM2:
   - [F7, F5, F3, F1, F9, F8, F12, F2, F4, F6]
-  - - '~'
+  - - $
     - '*'
     - '#'
     - '!'
@@ -61,16 +61,16 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - ''
-    - $
     - ''
+  - - ''
+    - ''
+    - '~'
     - '`'
     - ''
     - ''
     - {t: ▽, type: trans}
-    - ''
-    - ''
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
     - ''
   - - {t: ▽, type: trans}
     - {type: held}

@@ -10,10 +10,21 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
 
+  /* ╭────────────────────┬────────────────────╮ */
+  /* │  0   1   2   3   4 │  5   6   7   8   9 │ */
+  /* │ 10  11  12  13  14 │ 15  16  17  18  19 │ */
+  /* │ 20  21  22  23  24 │ 25  26  27  28  29 │ */
+  /* ╰───────────╮ 30  31 │ 32  33 ╭───────────╯ */
+  /*             ╰────────┴────────╯ */
+
+#define KEYS_L 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24
+#define KEYS_R 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29
+#define THUMBS 30 31 32 33
+
 #define DEF 0
 #define EXT 1
 #define SYM 2
-#define SYM2 3
+#define NUM 3
 #define FUN 4
 
 #define PREV LG(LS(LBKT))
@@ -25,6 +36,15 @@
 
 #define BRI_UP LC(C_BRI_UP)
 #define BRI_DN LC(C_BRI_DN)
+
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <50>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <0>; \
+    require-prior-idle-ms = <150>; \
+  };
 
 &sk {
   release-after-ms = <1000>;
@@ -38,6 +58,11 @@
 };
 
 / {
+  combos {
+    compatible = "zmk,combos";
+    COMBO(esc, &kp ESC, 1 3)
+  };
+
   behaviors {
     smart_shift: smart_shift {
       compatible = "zmk,behavior-mod-morph";
@@ -54,6 +79,41 @@
       bindings = <&mo SYM>, <&mo FUN>;
       mods = <(MOD_RSFT)>;
     };
+
+    swapper: swapper {
+      label = "SWAPPER";
+      compatible = "zmk,behavior-tri-state";
+      #binding-cells = <0>;
+      bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+      ignored-key-positions = <2>;
+    };
+
+    hml: hml {
+      label = "HML";
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <280>;
+      quick-tap-ms = <175>;
+      require-prior-idle-ms = <150>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <KEYS_R THUMBS>;
+      hold-trigger-on-release;
+    };
+
+    hmr: hmr {
+      label = "HMR";
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <280>;
+      quick-tap-ms = <175>;
+      require-prior-idle-ms = <140>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <KEYS_L THUMBS>;
+      hold-trigger-on-release;
+    };
+
   };
 
   conditional_layers {
@@ -61,7 +121,7 @@
 
     fun_tri_layer {
       if-layers = <1 2>;
-      then-layer = <3>;
+      then-layer = <4>;
     };
   };
 
@@ -72,9 +132,10 @@
       label = "DEF";
       bindings = <
       &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J        &kp L        &kp U        &kp Y        &kp SQT
+      /* &hml LALT A  &hml LGUI R  &hml LSFT S  &hml LCTL T  &kp G          &kp M        &hmr LCTL N  &hmr LSFT E  &hmr LGUI I  &hmr LALT O */
       &kp A        &kp R        &kp S        &kp T        &kp G          &kp M        &kp N        &kp E        &kp I        &kp O
       &kp Z        &kp X        &kp C        &kp D        &kp V          &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
-                                             &smart_shift &mo EXT        &kp SPACE    &sym_fun
+                                             &mo EXT      &kp RSFT       &kp SPACE    &sym_fun
       >;
     };
 
@@ -83,7 +144,7 @@
       bindings = <
       &kp ESC      &kp PREV     &kp LG(F)     &kp NEXT     &key_repeat   &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
       &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &kp LC(G)     &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
-      &kp RG(Z)    &kp RG(X)    &kp RG(C)     &kp TAB      &kp RG(V)     &kp LA(BSPC) &kp BSPC     &kp TAB      &none        &none
+      &kp RG(Z)    &kp RG(X)    &kp RG(C)     &kp TAB      &kp RG(V)     &kp LA(BSPC) &kp BSPC     &kp LC(T)    &none        &none
                                               &trans       &trans        &kp RET      &trans
       >;
     };
@@ -91,19 +152,19 @@
     sym_layer {
       label = "SYM";
       bindings = <
-      &kp N7       &kp N5       &kp N3        &kp N1       &kp N9        &kp N8       &kp N0       &kp N2       &kp N4       &kp N6
-      &kp PRCNT    &kp EQUAL    &kp COLON     &kp UNDER    &kp PIPE      &kp LBKT     &kp LPAR     &kp LBRC     &kp LT       &kp SEMI
-      &kp PLUS     &kp MINUS    &kp AMPS      &kp AT       &kp CARET     &kp RBKT     &kp RPAR     &kp RBRC     &kp GT       &kp BSLH
-                                              &mo FUN      &trans        &trans       &trans
+      &kp EXCL     &kp EQUAL    &kp LBRC      &kp LPAR     &kp LBKT      &kp RBKT     &kp RPAR     &kp RBRC     &kp SEMI     &kp STAR
+      &kp PRCNT    &kp MINUS    &kp COLON     &kp UNDER    &kp PIPE      &kp HASH     &sk LCTL     &sk LSFT     &sk LGUI     &sk LALT
+      &kp PLUS     &kp AMPS     &kp CARET     &kp AT       &kp TILDE     &kp DLLR     &kp GRAVE    &kp LT       &kp GT       &kp BSLH
+                                              &trans       &mo NUM       &trans       &trans
       >;
     };
 
-    sym2_layer {
-      label = "SYM2";
+    num_layer {
+      label = "NUM";
       bindings = <
+      &kp N7       &kp N5       &kp N3        &kp N1       &kp N9        &kp N8       &kp N0       &kp N2       &kp N4       &kp N6
+      &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &kp F11       &kp F10      &sk LCTL     &sk LSFT     &sk LGUI     &sk LALT
       &kp F7       &kp F5       &kp F3        &kp F1       &kp F9        &kp F8       &kp F12      &kp F2       &kp F4       &kp F6
-      &kp DLLR     &kp STAR     &kp HASH      &kp EXCL     &kp F11       &kp F10      &trans       &trans       &trans       &none
-      &none        &none        &kp TILDE     &kp GRAVE    &none         &none        &trans       &trans       &trans       &none
                                               &trans       &trans        &trans       &trans
       >;
     };
@@ -112,7 +173,7 @@
       label = "FUN";
       bindings = <
       &none        &kp C_PREV   &kp C_PP      &kp C_NEXT   &kp BRI_UP    &kp ZOOM_IN  &bt BT_PRV   &bt BT_CLR   &bt BT_NXT   &none
-      &none        &kp C_VOL_DN &kp C_MUTE    &kp C_VOL_UP &kp BRI_DN    &kp ZOOM_OUT &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none
+      &none        &kp C_VOL_DN &kp C_MUTE    &kp C_VOL_UP &kp BRI_DN    &kp ZOOM_OUT &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &out OUT_TOG
       &none        &none        &none         &none        &none         &kp ZOOM_RES &none        &none        &none        &none
                                               &none        &trans        &trans       &trans
       >;

@@ -27,8 +27,8 @@
 #define NUM 3
 #define FUN 4
 
-#define PREV LG(LS(LBKT))
-#define NEXT LG(LS(RBKT))
+#define PREV LC(LS(TAB))
+#define NEXT LC(TAB)
 
 #define ZOOM_IN  LG(PLUS)
 #define ZOOM_OUT LG(MINUS)
@@ -72,7 +72,7 @@
       mods = <(MOD_RSFT)>;
     };
 
-    sym_num: sym_fun {
+    sym_num: sym_num {
       compatible = "zmk,behavior-mod-morph";
       label = "SYM_NUM";
       #binding-cells = <0>;
@@ -80,11 +80,19 @@
       mods = <(MOD_RSFT)>;
     };
 
-    swapper: swapper {
-      label = "SWAPPER";
+    win_swapper: win_swapper {
+      label = "WIN_SWAPPER";
       compatible = "zmk,behavior-tri-state";
       #binding-cells = <0>;
       bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+      ignored-key-positions = <2>;
+    };
+
+    tab_swapper: tab_swapper {
+      label = "TAB_SWAPPER";
+      compatible = "zmk,behavior-tri-state";
+      #binding-cells = <0>;
+      bindings = <&kt LCTL>, <&kp TAB>, <&kt LCTL>;
       ignored-key-positions = <2>;
     };
 
@@ -95,7 +103,7 @@
       flavor = "balanced";
       tapping-term-ms = <280>;
       quick-tap-ms = <175>;
-      require-prior-idle-ms = <150>;
+      require-prior-idle-ms = <145>;
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <KEYS_R THUMBS>;
       hold-trigger-on-release;
@@ -108,12 +116,11 @@
       flavor = "balanced";
       tapping-term-ms = <280>;
       quick-tap-ms = <175>;
-      require-prior-idle-ms = <140>;
+      require-prior-idle-ms = <145>;
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <KEYS_L THUMBS>;
       hold-trigger-on-release;
     };
-
   };
 
   conditional_layers {
@@ -132,19 +139,20 @@
       label = "DEF";
       bindings = <
       &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J        &kp L        &kp U        &kp Y        &kp SQT
-      /* &hml LALT A  &hml LGUI R  &hml LSFT S  &hml LCTL T  &kp G          &kp M        &hmr LCTL N  &hmr LSFT E  &hmr LGUI I  &hmr LALT O */
+      //&hml LSFT A  &hml LGUI R  &hml LALT S  &hml LCTL T  &kp G          &kp M        &hmr LCTL N  &hmr LALT E  &hmr LGUI I  &hmr LSFT O
       &kp A        &kp R        &kp S        &kp T        &kp G          &kp M        &kp N        &kp E        &kp I        &kp O
       &kp Z        &kp X        &kp C        &kp D        &kp V          &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
-                                             &mo EXT      &kp RSFT       &kp SPACE    &sym_num
+                                             &mo EXT      &kp RSFT       &kp SPACE    &mo SYM
       >;
     };
+
 
     ext_layer {
       label = "EXT";
       bindings = <
       &kp ESC      &kp PREV     &kp LG(F)     &kp NEXT     &key_repeat   &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
-      &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &kp LC(G)     &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
-      &kp RG(Z)    &kp RG(X)    &kp RG(C)     &kp TAB      &kp RG(V)     &kp LA(BSPC) &kp BSPC     &kp LC(T)    &none        &none
+      &sk LSFT     &sk LGUI     &sk LALT      &sk LCTL     &kp LC(G)     &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
+      &kp RG(Z)    &kp RG(X)    &kp RG(C)     &kp TAB      &kp RG(V)     &kp LA(BSPC) &kp BSPC     &none        &none        &none
                                               &trans       &trans        &kp RET      &trans
       >;
     };
@@ -153,8 +161,8 @@
       label = "SYM";
       bindings = <
       &kp EXCL     &kp HASH     &kp LBRC      &kp LPAR     &kp LBKT      &kp RBKT     &kp RPAR     &kp RBRC     &kp COLON    &kp GRAVE
-      &kp PRCNT    &kp EQUAL    &kp MINUS     &kp UNDER    &kp AT        &kp SEMI     &sk LCTL     &sk LSFT     &sk LGUI     &sk LALT
-      &kp PLUS     &kp AMPS     &kp CARET     &kp PIPE     &kp TILDE     &kp STAR     &kp DLLR     &kp LT       &kp GT       &kp BSLH
+      &kp PRCNT    &kp EQUAL    &kp MINUS     &kp UNDER    &kp LT        &kp GT       &sk LCTL     &sk LALT     &sk LGUI     &sk LSFT
+      &kp PLUS     &kp AMPS     &kp PIPE      &kp AT       &kp DLLR      &kp CARET    &kp TILDE    &kp STAR     &kp SEMI     &kp BSLH
                                               &trans       &mo NUM       &trans       &trans
       >;
     };
@@ -163,7 +171,7 @@
       label = "NUM";
       bindings = <
       &kp N7       &kp N5       &kp N3        &kp N1       &kp N9        &kp N8       &kp N0       &kp N2       &kp N4       &kp N6
-      &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &kp F11       &kp F10      &sk LCTL     &sk LSFT     &sk LGUI     &sk LALT
+      &sk LSFT     &sk LGUI     &sk LALT      &sk LCTL     &kp F11       &kp F10      &sk LCTL     &sk LALT     &sk LGUI     &sk LSFT
       &kp F7       &kp F5       &kp F3        &kp F1       &kp F9        &kp F8       &kp F12      &kp F2       &kp F4       &kp F6
                                               &trans       &trans        &trans       &trans
       >;

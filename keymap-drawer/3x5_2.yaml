@@ -3,24 +3,21 @@ layers:
   - [Q, W, F, P, B, J, L, U, Y, '''']
   - [A, R, S, T, G, M, N, E, I, O]
   - [Z, X, C, D, V, K, H, ',', ., /]
-  - - EXT
-    - RSFT
-    - $$mdi:keyboard-space$$
-    - {t: SYM, s: NUM}
+  - [EXT, RSFT, '$$mdi:keyboard-space$$', SYM]
   EXT:
   - - Esc
-    - {t: '$$mdi:page-previous-outline$$', h: Prev Tab}
+    - LC(LS(TAB))
     - {t: '$$mdi:magnify$$', h: Find}
-    - {t: '$$mdi:page-next-outline$$', h: Next Tab}
+    - LC(TAB)
     - {t: '$$mdi:repeat$$', h: Repeat}
     - PgUp
     - Home
     - $$mdi:arrow-up$$
     - End
     - {t: '$$mdi:apple-keyboard-caps$$', h: Caps}
-  - - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
+  - - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-control$$', h: sticky}
     - C-g
     - PgDn
@@ -35,7 +32,7 @@ layers:
     - Paste
     - {t: '$$mdi:backspace-outline$$', h: Word}
     - {t: '$$mdi:backspace-outline$$', h: Bspc}
-    - LC(T)
+    - ''
     - ''
     - ''
   - - {type: held}
@@ -48,32 +45,32 @@ layers:
     - '='
     - '-'
     - _
-    - '@'
-    - ;
+    - <
+    - '>'
     - {t: '$$mdi:apple-keyboard-control$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
-  - [+, '&', ^, '|', '~', '*', $, <, '>', \]
+    - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
+  - [+, '&', '|', '@', '~', ^, ;, '*', $, \]
   - - {t: ▽, type: trans}
     - NUM
     - {t: ▽, type: trans}
     - {type: held}
   NUM:
   - ['7', '5', '3', '1', '9', '8', '0', '2', '4', '6']
-  - - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
+  - - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-control$$', h: sticky}
     - F11
     - F10
     - {t: '$$mdi:apple-keyboard-control$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
   - [F7, F5, F3, F1, F9, F8, F12, F2, F4, F6]
   - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {type: held}
     - {t: ▽, type: trans}
     - {type: held}
   FUN:
@@ -102,7 +99,3 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
-combos:
-- p: [1, 3]
-  k: Esc
-  l: [DEF]

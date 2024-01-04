@@ -32,7 +32,7 @@ layers:
     - Paste
     - {t: '$$mdi:backspace-outline$$', h: Word}
     - {t: '$$mdi:backspace-outline$$', h: Bspc}
-    - ''
+    - {t: '$$mdi:keyboard-tab$$', h: Tab}
     - ''
     - ''
   - - {type: held}
@@ -99,3 +99,7 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
+combos:
+- p: [1, 3]
+  k: Esc
+  l: [DEF]

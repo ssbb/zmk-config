@@ -400,6 +400,12 @@ path.combo {
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key"/>
 <text x="0" y="0" class="key tap">SYM</text>
 </g>
+<g class="combo combopos-0">
+<path d="M150,28 l-40,0" class="combo"/>
+<path d="M150,28 l40,0" class="combo"/>
+<rect rx="6" ry="6" x="136" y="15" width="28" height="26" class="combo"/>
+<text x="150" y="28" class="combo tap">Esc</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 280)" class="layer-EXT">
@@ -526,6 +532,8 @@ path.combo {
 </g>
 <g transform="translate(480, 140)" class="key keypos-27">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key"/>
+<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:keyboard-tab"/>
+<text x="0" y="24" class="key hold">Tab</text>
 </g>
 <g transform="translate(540, 140)" class="key keypos-28">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key"/>

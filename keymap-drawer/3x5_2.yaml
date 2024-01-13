@@ -3,9 +3,12 @@ layers:
   - [Q, W, F, P, B, J, L, U, Y, '''']
   - [A, R, S, T, G, M, N, E, I, O]
   - [Z, X, C, D, V, K, H, ',', ., /]
-  - [EXT, RSFT, '$$mdi:keyboard-space$$', SYM]
+  - - EXT
+    - RSFT
+    - $$mdi:keyboard-space$$
+    - {t: SYM, s: NUM}
   EXT:
-  - - Esc
+  - - ''
     - LC(LS(TAB))
     - {t: '$$mdi:magnify$$', h: Find}
     - LC(TAB)
@@ -70,7 +73,7 @@ layers:
     - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
   - [F7, F5, F3, F1, F9, F8, F12, F2, F4, F6]
   - - {t: ▽, type: trans}
-    - {type: held}
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
   FUN:

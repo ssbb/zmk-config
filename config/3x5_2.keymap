@@ -69,11 +69,19 @@
       bindings = <&mo SYM>, <&mo NUM>;
       mods = <(MOD_RSFT)>;
     };
+
+    spc_leader: spc_leader {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp SPACE>, <&kp F18>;
+      mods = <(MOD_RSFT)>;
+    };
   };
 
   combos {
     compatible = "zmk,combos";
     COMBO(esc, &kp ESC, 1 3)
+    COMBO(leader, &kp F18, 26 27)
   };
 
   keymap {
@@ -85,7 +93,7 @@
       &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J        &kp L        &kp U        &kp Y        &kp SQT
       &kp A        &kp R        &kp S        &kp T        &kp G          &kp M        &kp N        &kp E        &kp I        &kp O
       &kp Z        &kp X        &kp C        &kp D        &kp V          &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
-                                             &mo EXT      &kp RSFT       &kp SPACE    &sym_num
+                                             &mo EXT      &kp RSFT       &kp SPC      &sym_num
       >;
     };
 

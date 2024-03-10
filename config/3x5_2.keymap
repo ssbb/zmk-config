@@ -101,7 +101,7 @@
       bindings = <
       &none        &kp PREV     &kp LG(F)     &kp NEXT     &key_repeat   &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
       &sk LSFT     &sk LGUI     &sk LALT      &sk LCTL     &kp LC(G)     &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
-      &kp RG(Z)    &kp RG(X)    &kp RG(C)     &kp TAB      &kp RG(V)     &kp LA(BSPC) &kp BSPC     &kp TAB      &none        &none
+      &kp RG(Z)    &kp RG(X)    &kp RG(C)     &kp TAB      &kp RG(V)     &kp LA(BSPC) &kp BSPC     &none        &none        &none
                                               &trans       &trans        &kp RET      &trans
       >;
     };

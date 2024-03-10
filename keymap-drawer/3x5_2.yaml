@@ -5,7 +5,7 @@ layers:
   - [Z, X, C, D, V, K, H, ',', ., /]
   - - EXT
     - RSFT
-    - {t: '$$mdi:keyboard-space$$', s: F18}
+    - SPC
     - {t: SYM, s: NUM}
   EXT:
   - - ''
@@ -48,13 +48,13 @@ layers:
     - '='
     - '-'
     - _
-    - <
-    - '>'
+    - '@'
+    - ;
     - {t: '$$mdi:apple-keyboard-control$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
-  - [+, '&', '|', '@', '~', ^, ;, $, '*', \]
+  - [+, '&', '|', <, '~', ^, '>', $, '*', \]
   - - {t: ▽, type: trans}
     - NUM
     - {t: ▽, type: trans}
@@ -105,4 +105,7 @@ layers:
 combos:
 - p: [1, 3]
   k: Esc
+  l: [DEF]
+- p: [26, 27]
+  k: F18
   l: [DEF]

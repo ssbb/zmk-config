@@ -100,7 +100,7 @@
       label = "EXT";
       bindings = <
       &none        &kp PREV     &kp LG(F)     &kp NEXT     &key_repeat   &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
-      &sk LSFT     &sk LGUI     &sk LALT      &sk LCTL     &kp LC(G)     &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
+      &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &kp LC(G)     &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
       &kp RG(Z)    &kp RG(X)    &kp RG(C)     &kp TAB      &kp RG(V)     &kp LA(BSPC) &kp BSPC     &none        &none        &none
                                               &trans       &trans        &kp RET      &trans
       >;
@@ -110,7 +110,7 @@
       label = "SYM";
       bindings = <
       &kp EXCL     &kp HASH     &kp LBRC      &kp LPAR     &kp LBKT      &kp RBKT     &kp RPAR     &kp RBRC     &kp COLON    &kp GRAVE
-      &kp PRCNT    &kp EQUAL    &kp MINUS     &kp UNDER    &kp LT        &kp GT       &sk LCTL     &sk LALT     &sk LGUI     &sk LSFT
+      &kp PRCNT    &kp EQUAL    &kp MINUS     &kp UNDER    &kp LT        &kp GT       &sk LCTL     &sk LSFT     &sk LGUI     &sk LALT
       &kp PLUS     &kp AMPS     &kp PIPE      &kp AT       &kp TILDE     &kp CARET    &kp SEMI     &kp DLLR     &kp STAR     &kp BSLH
                                               &trans       &mo NUM       &trans       &trans
       >;
@@ -120,10 +120,10 @@
       label = "NUM";
       bindings = <
       &kp N7       &kp N5       &kp N3        &kp N1       &kp N9        &kp N8       &kp N0       &kp N2       &kp N4       &kp N6
-      &sk LSFT     &sk LGUI     &sk LALT      &sk LCTL     &kp F11       &kp F10      &sk LCTL     &sk LALT     &sk LGUI     &sk LSFT
+      &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &kp F11       &kp F10      &sk LCTL     &sk LSFT     &sk LGUI     &sk LALT
       &kp F7       &kp F5       &kp F3        &kp F1       &kp F9        &kp F8       &kp F12      &kp F2       &kp F4       &kp F6
                                               &trans       &trans        &trans       &trans
-      >;
+     >;
     };
 
     fun_layer {

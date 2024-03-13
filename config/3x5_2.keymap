@@ -58,25 +58,19 @@
 
     fun_tri_layer {
       if-layers = <1 2>;
-      then-layer = <4>;
+      then-layer = <3>;
     };
   };
 
   behaviors {
-    sym_num: sym_num {
+    spc_fun: spc_fun {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&mo SYM>, <&mo NUM>;
-      mods = <(MOD_RSFT)>;
-    };
-
-    spc_leader: spc_leader {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&kp SPACE>, <&kp F18>;
+      bindings = <&kp SPC>, <&mo FUN>;
       mods = <(MOD_RSFT)>;
     };
   };
+
 
   combos {
     compatible = "zmk,combos";
@@ -92,7 +86,7 @@
       &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J        &kp L        &kp U        &kp Y        &kp SQT
       &kp A        &kp R        &kp S        &kp T        &kp G          &kp M        &kp N        &kp E        &kp I        &kp O
       &kp Z        &kp X        &kp C        &kp D        &kp V          &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
-                                             &mo EXT      &kp RSFT       &kp SPC      &sym_num
+                                             &mo EXT      &kp RSFT       &spc_fun      &mo SYM
       >;
     };
 
@@ -101,7 +95,7 @@
       bindings = <
       &none        &kp PREV     &kp LG(F)     &kp NEXT     &key_repeat   &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
       &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &kp LC(G)     &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
-      &kp RG(Z)    &kp RG(X)    &kp RG(C)     &kp TAB      &kp RG(V)     &kp LA(BSPC) &kp BSPC     &none        &none        &none
+      &none        &none        &none         &kp TAB      &none         &kp LA(BSPC) &kp BSPC     &none        &none        &none
                                               &trans       &trans        &kp RET      &trans
       >;
     };
@@ -112,7 +106,7 @@
       &kp EXCL     &kp HASH     &kp LBRC      &kp LPAR     &kp LBKT      &kp RBKT     &kp RPAR     &kp RBRC     &kp COLON    &kp GRAVE
       &kp PRCNT    &kp EQUAL    &kp MINUS     &kp UNDER    &kp LT        &kp GT       &sk LCTL     &sk LSFT     &sk LGUI     &sk LALT
       &kp PLUS     &kp AMPS     &kp PIPE      &kp AT       &kp TILDE     &kp CARET    &kp SEMI     &kp DLLR     &kp STAR     &kp BSLH
-                                              &trans       &mo NUM       &trans       &trans
+                                              &trans       &trans        &trans       &trans
       >;
     };
 
@@ -123,7 +117,7 @@
       &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &kp F11       &kp F10      &sk LCTL     &sk LSFT     &sk LGUI     &sk LALT
       &kp F7       &kp F5       &kp F3        &kp F1       &kp F9        &kp F8       &kp F12      &kp F2       &kp F4       &kp F6
                                               &trans       &trans        &trans       &trans
-     >;
+      >;
     };
 
     fun_layer {

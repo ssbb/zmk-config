@@ -69,8 +69,14 @@
       bindings = <&kp SPC>, <&mo FUN>;
       mods = <(MOD_RSFT)>;
     };
-  };
 
+    smart_shift: smart_shift {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&sk RSFT>, <&caps_word>;
+      mods = <(MOD_RSFT)>;
+    };
+  };
 
   combos {
     compatible = "zmk,combos";
@@ -86,15 +92,15 @@
       &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J        &kp L        &kp U        &kp Y        &kp SQT
       &kp A        &kp R        &kp S        &kp T        &kp G          &kp M        &kp N        &kp E        &kp I        &kp O
       &kp Z        &kp X        &kp C        &kp D        &kp V          &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
-                                             &mo EXT      &kp RSFT       &spc_fun      &mo SYM
+                                             &mo EXT      &smart_shift   &spc_fun      &mo SYM
       >;
     };
 
     ext_layer {
       label = "EXT";
       bindings = <
-      &none        &kp PREV     &kp LG(F)     &kp NEXT     &key_repeat   &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
-      &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &kp LC(G)     &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
+      &none        &kp PREV     &none         &kp NEXT     &key_repeat   &kp PG_UP    &kp HOME     &kp UP       &kp END      &kp CAPS
+      &sk LALT     &sk LGUI     &sk LSFT      &sk LCTL     &none         &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &kp DEL
       &none        &none        &none         &kp TAB      &none         &kp LA(BSPC) &kp BSPC     &none        &none        &none
                                               &trans       &trans        &kp RET      &trans
       >;

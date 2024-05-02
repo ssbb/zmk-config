@@ -4,105 +4,117 @@ layers:
   - [A, R, S, T, G, M, N, E, I, O]
   - [Z, X, C, D, V, K, H, ',', ., /]
   - - EXT
-    - {t: RSFT, h: sticky, s: Caps Word}
-    - {t: SPC, s: FUN}
+    - SPC
+    - {t: '$$mdi:apple-keyboard-shift$$', h: Shift}
     - SYM
   EXT:
-  - - ''
+  - - {t: FUN, h: sticky}
     - LC(LS(TAB))
-    - ''
+    - {t: '$$mdi:magnify$$', h: Find}
     - LC(TAB)
-    - {t: '$$mdi:repeat$$', h: Repeat}
-    - PgUp
+    - {t: '$$tabler:volume$$', h: Vol+}
+    - BRI UP
     - Home
     - $$mdi:arrow-up$$
     - End
-    - {t: '$$mdi:apple-keyboard-caps$$', h: Caps}
-  - - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
+    - {t: FUN, h: sticky}
+  - - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-control$$', h: sticky}
-    - ''
-    - PgDn
+    - {t: '$$tabler:volume-2$$', h: Vol-}
+    - BRI DN
     - $$mdi:arrow-left$$
     - $$mdi:arrow-down$$
     - $$mdi:arrow-right$$
     - {t: '$$mdi:backspace-reverse-outline$$', h: Delete}
-  - - ''
-    - ''
-    - ''
+  - - LG(Z)
+    - LG(X)
+    - LG(C)
     - {t: '$$mdi:keyboard-tab$$', h: Tab}
-    - ''
+    - LG(V)
     - {t: '$$mdi:backspace-outline$$', h: Word}
     - {t: '$$mdi:backspace-outline$$', h: Bspc}
-    - ''
-    - ''
-    - ''
+    - {t: '$$tabler:player-track-prev$$', h: Prev}
+    - {t: '$$tabler:player-play$$', h: Play/Pause}
+    - {t: '$$tabler:player-track-next$$', h: Next}
   - - {type: held}
     - {t: ▽, type: trans}
     - $$mdi:keyboard-return$$
     - {t: ▽, type: trans}
   SYM:
-  - ['!', '#', '{', (, '[', ']', ), '}', ':', '`']
+  - [$, '#', '{', (, '[', ']', ), '}', ':', ^]
   - - '%'
     - '='
     - '-'
     - _
-    - <
-    - '>'
+    - '|'
+    - ;
     - {t: '$$mdi:apple-keyboard-control$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
-  - [+, '&', '|', '@', '~', ^, ;, $, '*', \]
+    - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
+  - ['!', '&', '*', +, '~', '`', '@', <, '>', \]
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
   NUM:
   - ['7', '5', '3', '1', '9', '8', '0', '2', '4', '6']
-  - - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
+  - - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-control$$', h: sticky}
     - F11
     - F10
     - {t: '$$mdi:apple-keyboard-control$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
-    - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
+    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
   - [F7, F5, F3, F1, F9, F8, F12, F2, F4, F6]
   - - {type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
   FUN:
-  - - ''
-    - {t: '$$tabler:player-track-prev$$', h: Prev}
-    - {t: '$$tabler:player-play$$', h: Play/Pause}
-    - {t: '$$tabler:player-track-next$$', h: Next}
-    - {t: '$$tabler:brightness-up$$', h: Bri+}
-    - LG(PLUS)
-    - {t: '$$mdi:bluetooth$$', h: Prev}
-    - {t: '$$mdi:bluetooth-off$$', h: Clear}
-    - {t: '$$mdi:bluetooth$$', h: Next}
-    - ''
-  - - ''
-    - {t: '$$tabler:volume-2$$', h: Vol-}
-    - {t: '$$tabler:volume-off$$', h: Mute}
-    - {t: '$$tabler:volume$$', h: Vol+}
-    - {t: '$$tabler:brightness-down$$', h: Bri-}
-    - LG(MINUS)
-    - {t: '$$tabler:bluetooth$$', h: '1'}
-    - {t: '$$tabler:bluetooth$$', h: '2'}
-    - {t: '$$tabler:bluetooth$$', h: '3'}
-    - OUT TOG
-  - ['', '', '', '', '', LG(0), '', '', '', '']
-  - - ''
+  - - {t: '&outc OUT_TOG', type: held}
     - {t: ▽, type: trans}
-    - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - '&btc BT_PRV'
+    - {t: ▽, type: trans}
+    - '&btc BT_NXT'
+    - '&btc BT_CLR'
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - '&btc BT_SEL 0'
+    - '&btc BT_SEL 1'
+    - '&btc BT_SEL 2'
+    - '&btc BT_SEL 3'
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
 combos:
 - p: [1, 3]
   k: Esc
   l: [DEF]
+- p: [4, 14]
+  k: {t: '$$tabler:volume-off$$', h: Mute}
+  l: [EXT]

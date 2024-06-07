@@ -1,23 +1,23 @@
 layers:
-  DEF:
+  def:
   - [Q, W, F, P, B, J, L, U, Y, '''']
   - [A, R, S, T, G, M, N, E, I, O]
   - [Z, X, C, D, V, K, H, ',', ., /]
-  - - EXT
-    - SPC
+  - - ext
     - {t: '$$mdi:apple-keyboard-shift$$', h: Shift}
-    - SYM
-  EXT:
-  - - {t: FUN, h: sticky}
-    - LC(LS(TAB))
-    - {t: '$$mdi:magnify$$', h: Find}
-    - LC(TAB)
+    - SPC
+    - sym
+  ext:
+  - - {t: fun, h: sticky}
+    - {t: 'Ctl+Sft+ $$mdi:keyboard-tab$$', h: Ctl+Sft+ Tab}
+    - Gui+ F
+    - {t: 'Ctl+ $$mdi:keyboard-tab$$', h: Ctl+ Tab}
     - {t: '$$tabler:volume$$', h: Vol+}
     - BRI UP
     - Home
     - $$mdi:arrow-up$$
     - End
-    - {t: FUN, h: sticky}
+    - {t: fun, h: sticky}
   - - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-option$$', h: sticky}
@@ -28,12 +28,12 @@ layers:
     - $$mdi:arrow-down$$
     - $$mdi:arrow-right$$
     - {t: '$$mdi:backspace-reverse-outline$$', h: Delete}
-  - - LG(Z)
-    - LG(X)
-    - LG(C)
+  - - Gui+ Z
+    - Gui+ X
+    - Gui+ C
     - {t: '$$mdi:keyboard-tab$$', h: Tab}
-    - LG(V)
-    - {t: '$$mdi:backspace-outline$$', h: Word}
+    - Gui+ V
+    - {t: 'Alt+ $$mdi:backspace-outline$$', h: Alt+ Bspc}
     - {t: '$$mdi:backspace-outline$$', h: Bspc}
     - {t: '$$tabler:player-track-prev$$', h: Prev}
     - {t: '$$tabler:player-play$$', h: Play/Pause}
@@ -42,7 +42,7 @@ layers:
     - {t: ▽, type: trans}
     - $$mdi:keyboard-return$$
     - {t: ▽, type: trans}
-  SYM:
+  sym:
   - [$, '#', '{', (, '[', ']', ), '}', ':', ^]
   - - '%'
     - '='
@@ -59,7 +59,7 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
-  NUM:
+  num:
   - ['7', '5', '3', '1', '9', '8', '0', '2', '4', '6']
   - - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
     - {t: '$$mdi:apple-keyboard-command$$', h: sticky}
@@ -76,7 +76,7 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
-  FUN:
+  fun:
   - - {t: '&outc OUT_TOG', type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -114,7 +114,9 @@ layers:
 combos:
 - p: [1, 3]
   k: Esc
-  l: [DEF]
+  l: [def, ext, sym, num, fun]
+  a: top
+  o: 0.5
 - p: [4, 14]
   k: {t: '$$tabler:volume-off$$', h: Mute}
-  l: [EXT]
+  l: [ext]

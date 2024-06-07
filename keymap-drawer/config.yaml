@@ -140,7 +140,13 @@ parse_config:
       t: $$mdi:bluetooth$$
       h: Next
 
-  zmk_combos: {}
+  zmk_combos:
+    combo_esc:
+      align: top
+      offset: 0.5
+    combo_ret:
+      align: top
+      offset: 0.5
   zmk_keycode_map:
     LCTL:
       t: $$mdi:apple-keyboard-control$$
